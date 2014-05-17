@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'DashboardController@index');
+Route::resource('contact', 'ContactController');
+Route::resource('phonebook', 'PhonebookController');
+
