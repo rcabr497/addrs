@@ -133,10 +133,10 @@ class ContactController extends \BaseController {
 	 */
 	public function destroy($contactID)
 	{
-		DB::table(array('contact', 'social', 'personal'))->where('contactID', '=', '$contactID')->delete();
+		DB::table('contact')->where('contactID', '=', $contactID)->delete();
 		//$query = "DELETE * FROM contact, social, personal WHERE contactID = '$contactID'";
 
-	return View::make('contact.index');
+	return Redirect::to('contact');
 
 	}
 
