@@ -103,8 +103,45 @@ input {
 	}
 }
 
-//Create Contact Style
-.single-form {
-	margin-bottom: 10px;
+//View all contacts Style
+
+.contact-list {
+	padding-left: 0px;
+}
+.contact-single {
+	padding: 10px 0px;
+	border-bottom: 1px solid #eee;
+	list-style:none;
+	line-height: 100%;
+
 }
 
+.view-contact {
+	float: right;
+	background: #00b653;
+	color: white;
+	padding: 3px 5px;
+	font-size: 13px;
+	text-decoration: none;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.delete-contact {
+	float: right;
+	background: #00b653;
+	color: white;
+	padding: 3px 5px;
+	font-size: 13px;
+	margin-left: 10px;
+	text-decoration: none;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+
+//Create Contact Style
+.single-form {
+	margin-bottom: 10px;}

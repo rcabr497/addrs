@@ -12,8 +12,7 @@ class ContactController extends \BaseController {
 		// $contact = Contact::find(1);
 		$contact = DB::select("SELECT * FROM contact");
 
-		return View::make('contact.index')
-		->with('contact', $contact);
+		return View::make('contact.index')->with('contact', $contact);
 	}
 
 
@@ -61,7 +60,7 @@ class ContactController extends \BaseController {
 			'lastName' => $lastName,
 		));
 
-		$contactID = $contact->id; 
+		$contactID = $contact->contactID; 
 
 		$social = Social::create(array(
 			'birthday' => $birthday,
@@ -96,7 +95,7 @@ class ContactController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$query = "SELECT * FROM contact";
+		
 
 
 	}
@@ -132,9 +131,13 @@ class ContactController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($contactID)
 	{
-		//
+		DB::table(array('contact', 'social', 'personal'))->where('contactID', '=', '$contactID')->delete();
+		//$query = "DELETE * FROM contact, social, personal WHERE contactID = '$contactID'";
+
+	return View::make('contact.index');
+
 	}
 
 
