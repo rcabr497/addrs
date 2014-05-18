@@ -1,4 +1,5 @@
 @extends('hello')
+@include('header')
 @section('content')
 
 
@@ -6,14 +7,16 @@
 	<div class="row">
 		<div class="main">
 			<div class="full">
-				<pre>
+				<ul>
 					<?php 
 						foreach ($contact as $row) {
-							echo $row->firstName;
-							echo $row['lastName'];
+
+							echo '<li class="contact-single">';
+							echo '<span class="first-name">' . $row->firstName . ' </span><span>' . $row->lastName . '</span>';
+							echo '</li>';
 						}
 					?>
-				</pre>
+				</ul>
 			</div>
 		</div>
 	</div>

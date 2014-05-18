@@ -1,5 +1,5 @@
 @extends('hello')
-
+@include('header')
 @section('content')
 
 <div class="container">

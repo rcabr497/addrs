@@ -1,60 +1,80 @@
 @extends('hello')
+
+@include('header')
+
 @section('content')
 
-{{ Form::open(array('url' => 'contact')) }}
 
-{{ Form::label('firstname', 'First Name') }}
-{{ Form::text('firstName') }}
+<div class="container">
+	<div class="row">
+		<div class="main cf">
+		<h2 class="page-title">Create new contact</h2>
+		{{ Form::open(array('url' => 'contact')) }}
+			<div class="half">
 
-{{ Form::label('middlename', 'Middle Name') }}
-{{ Form::text('middleName') }}
+				<div class="single-form">{{ Form::label('firstname', 'First Name') }}
+				{{ Form::text('firstName') }}</div>
 
-{{ Form::label('Last name', 'Last Name') }}
-{{ Form::text('lastName') }}
+				<div class="single-form">{{ Form::label('middlename', 'Middle Name') }}
+				{{ Form::text('middleName') }}</div>
 
-{{ Form::label('street', 'Street Address') }}
-{{ Form::text('street') }}
+				<div class="single-form">{{ Form::label('Last name', 'Last Name') }}
+				{{ Form::text('lastName') }}</div>
 
-{{ Form::label('city', 'Your City') }}
-{{ Form::text('city') }}
+				<div class="single-form">{{ Form::label('birthday', 'Birthday') }}
+				{{ Form::text('birthday') }}</div>
 
-{{ Form::label('state', 'Your State') }}
-{{ Form::text('state') }}
+				<div class="single-form">{{ Form::label('street', 'Street Address') }}
+				{{ Form::text('street') }}</div>
 
-{{ Form::label('zipcode', 'Your Zip Code') }}
-{{ Form::text('zipcode') }}
+				<div class="single-form">{{ Form::label('city', 'City') }}
+				{{ Form::text('city') }}</div>
 
-{{ Form::label('homePhone', 'Home Phone') }}
-{{ Form::text('homePhone') }}
+				<div class="single-form">{{ Form::label('state', 'State') }}
+				{{ Form::text('state') }}</div>
 
-{{ Form::label('cellPhone', 'Cell Phone') }}
-{{ Form::text('cellPhone') }}
+				<div class="single-form">{{ Form::label('zipcode', 'Your Zip Code') }}
+				{{ Form::text('zipcode') }}</div>
 
-{{ Form::label('email', 'Email') }}
-{{ Form::text('email') }}
+				<div class="single-form">{{ Form::label('homePhone', 'Home Phone') }}
+				{{ Form::text('homePhone') }}</div>
 
-{{ Form::label('facebook', 'Facebook') }}
-{{ Form::text('facebook') }}
+				<div class="single-form">{{ Form::label('cellPhone', 'Cell Phone') }}
+				{{ Form::text('cellPhone') }}</div>
 
-{{ Form::label('twitter', 'Twitter') }}
-{{ Form::text('twitter') }}
+				<div class="single-form">{{ Form::label('email', 'Email') }}
+				{{ Form::text('email') }}</div>
+			</div>
+			<div class="half last">
+				<div class="single-form">{{ Form::label('facebook', 'Facebook') }}
+				{{ Form::text('facebook') }}</div>
 
-{{ Form::label('instagram', 'Instagram') }}
-{{ Form::text('instagram') }}
+				<div class="single-form">{{ Form::label('twitter', 'Twitter') }}
+				{{ Form::text('twitter') }}</div>
 
-{{ Form::label('linkedin', 'LinkedIn') }}
-{{ Form::text('linkedin') }}
+				<div class="single-form">{{ Form::label('instagram', 'Instagram') }}
+				{{ Form::text('instagram') }}</div>
 
-{{ Form::label('pinterest', 'Pinterest') }}
-{{ Form::text('pinterest') }}
+				<div class="single-form">{{ Form::label('linkedin', 'LinkedIn') }}
+				{{ Form::text('linkedin') }}</div>
 
-{{ Form::label('googleplus', 'Google Plus') }}
-{{ Form::text('googleplus') }}
+				<div class="single-form">{{ Form::label('pinterest', 'Pinterest') }}
+				{{ Form::text('pinterest') }}</div>
 
+				<div class="single-form">{{ Form::label('googleplus', 'Google Plus') }}
+				{{ Form::text('googleplus') }}</div>
+			</div>
+			{{ Form::submit('Create') }}
+				{{ Form::close() }}
+			</div>
+		</div>
+	</div>
+</div>
 
-
-
-{{ Form::submit('Create') }}
-{{ Form::close() }}
+<script>
+  $(function() {
+    $( "#birthday" ).datepicker();
+  });
+  </script>
 
 @stop

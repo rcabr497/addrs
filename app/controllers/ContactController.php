@@ -9,10 +9,11 @@ class ContactController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
-		$contact = Contact::find(1);
+		// $contact = Contact::find(1);
+		$contact = DB::select("SELECT * FROM contact");
 
-		return View::make('contact.index')->with('contact', $contact);
+		return View::make('contact.index')
+		->with('contact', $contact);
 	}
 
 
@@ -39,6 +40,7 @@ class ContactController extends \BaseController {
 		$firstName = Input::get('firstName');
 		$middleName = Input::get('middleName');
 		$lastName = Input::get('lastName');
+		$birthday = Input::get('birthday');
 		$email = Input::get('email');
 		$street = Input::get('street');
 		$city = Input::get('city');
@@ -62,6 +64,7 @@ class ContactController extends \BaseController {
 		$contactID = $contact->id; 
 
 		$social = Social::create(array(
+			'birthday' => $birthday,
 			'contactID' => $contactID,
 			'facebook' => $facebook,
 			'twitter' => $twitter,
@@ -93,7 +96,9 @@ class ContactController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$query = "SELECT * FROM contact";
+
+
 	}
 
 

@@ -6,6 +6,7 @@ class Personal extends Eloquent {
 
 
 	protected $fillable = array('contactID',
+			'birthday',
 			'email',
 			'street',
 			'city',
